@@ -3,6 +3,7 @@ package org.projeto.tde.projetoemprestimotde.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import org.projeto.tde.projetoemprestimotde.DTOs.Equipamento.CadastroEquipamentoDTO;
+import org.projeto.tde.projetoemprestimotde.DTOs.Equipamento.UpdateEquipamentoDTO;
 import org.projeto.tde.projetoemprestimotde.entities.enums.EstadoConservacao;
 
 import java.math.BigDecimal;
@@ -61,4 +62,15 @@ public class Equipamento {
     }
 
 
+    public void update(UpdateEquipamentoDTO equipamentoDTO) {
+        this.setNome(equipamentoDTO.nome());
+        this.setDescricao(equipamentoDTO.descricao());
+        this.setDataCompra(equipamentoDTO.dataCompra());
+
+        this.setPeso(equipamentoDTO.peso());
+        this.setLargura(equipamentoDTO.largura());
+        this.setComprimento(equipamentoDTO.comprimento());
+
+        this.setEstadoConservacao(equipamentoDTO.estadoConservacao());
+    }
 }

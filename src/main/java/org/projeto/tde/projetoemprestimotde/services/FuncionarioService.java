@@ -16,12 +16,6 @@ public class FuncionarioService {
     @Autowired
     private FuncionarioRepository funcionarioRepository;
 
-    @Autowired
-    private EquipamentoRepository equipamentoRepository;
-
-    @Autowired
-    private EmprestimoRepository emprestimoRepository;
-
     public List<Funcionario> getFuncionarios() {
         return funcionarioRepository.findAll();
     }
@@ -38,9 +32,7 @@ public class FuncionarioService {
     public Funcionario updateFuncionario(Integer id, FuncionarioDTO funcionarioDTO) {
         Funcionario funcionario = funcionarioRepository.getReferenceById(id);
 
-        funcionario.setNome(funcionarioDTO.nome());
-        funcionario.setFuncao(funcionarioDTO.funcao());
-
+        funcionario.update(funcionarioDTO);
         funcionarioRepository.save(funcionario);
 
         return funcionario;

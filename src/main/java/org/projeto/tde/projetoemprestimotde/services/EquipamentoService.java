@@ -33,13 +33,7 @@ public class EquipamentoService {
 
     public Equipamento updateEquipamento(Integer id, UpdateEquipamentoDTO equipamentoDTO) {
         Equipamento equipamento = equipamentoRepository.getReferenceById(id);
-        equipamento.setNome(equipamentoDTO.nome());
-        equipamento.setDescricao(equipamentoDTO.descricao());
-        equipamento.setDataCompra(equipamentoDTO.dataCompra());
-        equipamento.setPeso(equipamentoDTO.peso());
-        equipamento.setLargura(equipamentoDTO.largura());
-        equipamento.setComprimento(equipamentoDTO.comprimento());
-        equipamento.setEstadoConservacao(equipamentoDTO.estadoConservacao());
+        equipamento.update(equipamentoDTO);
         equipamentoRepository.save(equipamento);
         return equipamento;
     }

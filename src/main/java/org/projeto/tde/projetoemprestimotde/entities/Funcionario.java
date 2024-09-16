@@ -36,4 +36,9 @@ public class Funcionario {
         this.setFuncao(funcionarioDTO.funcao());
         this.setDataAdmissao(LocalDate.now());
     }
+
+    public void update(FuncionarioDTO funcionarioDTO) {
+        this.setNome(funcionarioDTO.nome());
+        this.setFuncao(funcionarioDTO.funcao());
+    }
 }
