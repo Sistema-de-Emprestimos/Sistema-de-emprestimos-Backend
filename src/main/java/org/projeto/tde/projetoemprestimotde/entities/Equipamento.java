@@ -73,4 +73,8 @@ public class Equipamento {
 
         this.setEstadoConservacao(equipamentoDTO.estadoConservacao());
     }
+
+    public void addManutencao(Manutencao manutencao) {
+        this.historicoManutencao.add(manutencao);
+    }
 }

@@ -2,6 +2,7 @@ package org.projeto.tde.projetoemprestimotde.services;
 
 import org.projeto.tde.projetoemprestimotde.DTOs.Equipamento.CadastroEquipamentoDTO;
 import org.projeto.tde.projetoemprestimotde.DTOs.Equipamento.UpdateEquipamentoDTO;
+import org.projeto.tde.projetoemprestimotde.DTOs.Manutencao.ManutencaoDTO;
 import org.projeto.tde.projetoemprestimotde.entities.Equipamento;
 import org.projeto.tde.projetoemprestimotde.entities.Manutencao;
 import org.projeto.tde.projetoemprestimotde.repositories.EquipamentoRepository;
@@ -49,5 +50,15 @@ public class EquipamentoService {
     public List<Manutencao> getManutencoes(Integer id) {
         Equipamento equipamento = equipamentoRepository.getReferenceById(id);
         return equipamento.getHistoricoManutencao();
+    }
+
+    public Manutencao createManutencao(Integer idEquipamento, ManutencaoDTO manutencaoDTO) {
+        Equipamento equipamento = equipamentoRepository.getReferenceById(idEquipamento);
+        Manutencao manutencao = new Manutencao(manutencaoDTO);
+
+        equipamento.addManutencao(manutencao);
+        equipamentoRepository.save(equipamento);
+
+        return manutencao;
     }
 }

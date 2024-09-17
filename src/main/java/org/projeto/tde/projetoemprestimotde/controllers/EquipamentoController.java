@@ -47,8 +47,16 @@ public class EquipamentoController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/{id}/historico-manutencao")
+    @GetMapping("/{id}/manutencao")
+    @Operation(summary = "Listar manutenções de um equipamento", description = "Retorna uma lista de manutenções de um equipamento específico pelo ID")
     public ResponseEntity<List<ManutencaoDTO>> getManutencoes(@PathVariable Integer id) {
         return ResponseEntity.ok(equipamentoService.getManutencoes(id).stream().map(ManutencaoDTO::new).toList());
+    }
+}
+
+
+    @PostMapping("/{id}/manutencao")
+    public ResponseEntity<ManutencaoDTO> createManutencao(@PathVariable Integer idEquipamento, @RequestBody @Valid ManutencaoDTO manutencaoDTO) {
+        return ResponseEntity.ok(new ManutencaoDTO(equipamentoService.createManutencao(idEquipamento, manutencaoDTO)));
     }
 }

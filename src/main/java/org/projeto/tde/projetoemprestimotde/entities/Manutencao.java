@@ -2,6 +2,7 @@ package org.projeto.tde.projetoemprestimotde.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.projeto.tde.projetoemprestimotde.DTOs.Manutencao.ManutencaoDTO;
 
 import java.time.LocalDate;
 
@@ -26,4 +27,9 @@ public class Manutencao {
     @ManyToOne
     @JoinColumn(name = "equipamento_id")
     private Equipamento equipamento;
+
+    public Manutencao(ManutencaoDTO manutencaoDTO) {
+        this.setData(manutencaoDTO.data());
+        this.setDescricao(manutencaoDTO.descricao());
+    }
 }
