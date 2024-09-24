@@ -45,6 +45,7 @@ public class Emprestimo {
     public void devolverEmprestimo(RetornoEmprestimoDTO retornoEmprestimoDTO) {
         this.setObservacoes(retornoEmprestimoDTO.observacoes());
         this.setConcluido(true);
+        this.getEquipamento().devolverEquipamento();
         this.setDataRetorno(LocalDateTime.now());
         this.getEquipamento().setEstadoConservacao(retornoEmprestimoDTO.estadoConservacao());
     }

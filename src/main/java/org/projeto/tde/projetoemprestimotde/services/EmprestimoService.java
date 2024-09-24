@@ -44,6 +44,7 @@ public class EmprestimoService {
         }
 
         Emprestimo emprestimo = new Emprestimo(funcionario, equipamento);
+        equipamento.retirarEquipamento();
         emprestimoRepository.save(emprestimo);
         return emprestimo;
     }

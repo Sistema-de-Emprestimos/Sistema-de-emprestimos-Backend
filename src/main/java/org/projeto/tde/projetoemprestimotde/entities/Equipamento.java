@@ -77,4 +77,12 @@ public class Equipamento {
     public void addManutencao(Manutencao manutencao) {
         this.historicoManutencao.add(manutencao);
     }
+
+    public void retirarEquipamento() {
+        this.setDisponivel(false);
+    }
+
+    public void devolverEquipamento() {
+        this.setDisponivel(true);
+    }
 }
