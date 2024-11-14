@@ -5,7 +5,7 @@
 [FULLSTACK__URL]: https://github.com/sistema-de-ingressos/Fullstack-TicketFlow
 [FRONTEND__URL]: https://github.com/sistema-de-ingressos/Front-End-Sistema-de-Ingressos
 
-<h1 align="center">Projeto Emprestimo TDE - Back-End</h1>
+<h1 align="center">Sistema de Empréstimos - Back-End</h1>
 
 <div align="center" style="padding-bottom: 6px">
 
